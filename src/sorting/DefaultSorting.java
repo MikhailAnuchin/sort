@@ -1,7 +1,7 @@
 package sorting;
 
-public interface default_sorting {
-    default int[ ] Sort(int[ ] arr) throws Exception{
+public interface DefaultSorting {
+    default int[ ] sort(int[ ] arr) throws Exception{
         if (arr.length < 2) throw new Exception("The array length must be more than 1");
         boolean swapped;
         for(int i =0; i < arr.length-1; i++){

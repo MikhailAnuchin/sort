@@ -2,15 +2,15 @@ package sorting;
 
 //import java.util.Arrays;
 
-public class Quick_Sort implements default_sorting /*, Cloneable*/ {
+public class QuickSort implements DefaultSorting /*, Cloneable*/ {
     @Override
-    public int [ ] Sort(int [ ] arr) throws Exception{
+    public int [ ] sort(int [ ] arr) throws Exception{
         if (arr.length < 2) throw new Exception("The array length must be more than 1");
         /*int [ ] coparr = Arrays.copyOfRange(arr, 0, arr.length);
         System.out.println(Arrays.toString(coparr));*/
         int startIndex = 0;
         int endIndex = arr.length - 1;
-        quick_sort(arr, startIndex, endIndex);
+        quicksort(arr, startIndex, endIndex);
         return arr;
     }
 
@@ -19,7 +19,7 @@ public class Quick_Sort implements default_sorting /*, Cloneable*/ {
         return (Quick_Sort) super.clone();
     }*/
 
-    private void quick_sort(int [ ] arr, int start, int end) {
+    private void quicksort(int [ ] arr, int start, int end) {
         if (start >= end)
             return;
         int i = start, j = end;
@@ -41,8 +41,8 @@ public class Quick_Sort implements default_sorting /*, Cloneable*/ {
                     cur = i;
             }
         }
-        quick_sort(arr, start, cur);
-        quick_sort(arr, cur+1, end);
+        quicksort(arr, start, cur);
+        quicksort(arr, cur+1, end);
         //return arr;
     }
 }

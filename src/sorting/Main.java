@@ -6,8 +6,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Random_Array R = new Random_Array();
-        int [ ]arr = R.initArr();
+        // R = new Random_Array();
+        int [ ]arr = RandomArray.initarr();
 
         //Integer[ ]arr = R.initArr();
 
@@ -41,8 +41,8 @@ public class Main {
         //b.Sort(arr);
         try {
             st = System.nanoTime();
-            Shell_Sort a = new Shell_Sort();
-            a.Sort(arr1);
+            ShellSort a = new ShellSort();
+            a.sort(arr1);
             en = System.nanoTime();
             System.out.println("Shell_Sort:"+Arrays.toString(arr1)+String.format("%,12d",en-st) + " ns");
         }
@@ -54,8 +54,8 @@ public class Main {
         //System.out.println("arr1:"+Arrays.toString(arr));
         try {
             st = System.nanoTime();
-            Quick_Sort b = new Quick_Sort();
-            b.Sort(arr2);
+            QuickSort b = new QuickSort();
+            b.sort(arr2);
             en = System.nanoTime();
             System.out.println("Quick_Sort:"+Arrays.toString(arr2)+String.format("%,12d",en-st) + " ns");
         }
@@ -66,8 +66,8 @@ public class Main {
 
         try {
             st = System.nanoTime();
-            Merge_Sort c = new Merge_Sort();
-            c.Sort(arr3);
+            MergeSort c = new MergeSort();
+            c.sort(arr3);
             en = System.nanoTime();
             System.out.println("Merge_Sort:"+Arrays.toString(arr3)+String.format("%,12d",en-st) + " ns");
         }
@@ -78,8 +78,8 @@ public class Main {
 
         try {
             st = System.nanoTime();
-            Bubble_Sort d = new Bubble_Sort();
-            d.Sort(arr4);
+            BubbleSort d = new BubbleSort();
+            d.sort(arr4);
             en = System.nanoTime();
             System.out.println("Bubble_Sort:"+Arrays.toString(arr4)+String.format("%,12d",en-st) + " ns");
         }

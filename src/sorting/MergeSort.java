@@ -2,16 +2,16 @@ package sorting;
 
 import java.util.Arrays;
 
-public class Merge_Sort implements default_sorting {
+public class MergeSort implements DefaultSorting {
     @Override
-    public int [ ] Sort(int [ ] arr) throws Exception {
+    public int [ ] sort(int [ ] arr) throws Exception {
         if (arr.length < 2) throw new Exception("The array length must be more than 1");
         /*int [ ] coparr = Arrays.copyOfRange(arr, 0, arr.length);
         System.out.println(Arrays.toString(coparr));*/
-        Sorting(arr);
+        sorting(arr);
         return arr;
     }
-    private void Sorting (int [ ] arr){
+    private void sorting (int [ ] arr){
         if (arr.length > 1) {
             int q = arr.length/2;
 
@@ -20,10 +20,10 @@ public class Merge_Sort implements default_sorting {
 //changed range of rightArray from q-to-A.length to q-to-(A.length-1)
             int[] rightArray = Arrays.copyOfRange(arr, q, arr.length);
 
-            Sorting(leftArray);
-            Sorting(rightArray);
+            sorting(leftArray);
+            sorting(rightArray);
 
-            Merge(arr,leftArray,rightArray);
+            merge(arr,leftArray,rightArray);
         }
     }
 
@@ -32,7 +32,7 @@ public class Merge_Sort implements default_sorting {
         return (Merge_Sort) super.clone();
     }*/
 
-    private void Merge(int[] arr, int[] l, int[] r) {
+    private void merge(int[] arr, int[] l, int[] r) {
         int totElem = l.length + r.length;
         //int[] a = new int[totElem];
         int i,li,ri;
@@ -58,15 +58,15 @@ public class Merge_Sort implements default_sorting {
                         ri++;
                     }
                 }
-                if (ri >= r.length) {
+                //if (ri >= r.length) {
                     while (li < l.length) {
                         arr[i] = l[li];
                         li++;
                         i++;
                     }
-                }
+                //}
             }
         }
-        //return a;
+        //return arr;
     }
 }

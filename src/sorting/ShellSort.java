@@ -1,21 +1,21 @@
 package sorting;
 
-public class Shell_Sort implements default_sorting {
+public class ShellSort implements DefaultSorting {
     @Override
-    public int [ ] Sort(int [ ] arr) throws Exception {
+    public int [ ] sort(int [ ] arr) throws Exception {
         if (arr.length < 2) throw new Exception("The array length must be more than 1");
         int h = 1;
         while (h*3 < arr.length)
             h = h * 3 + 1;
 
         while(h >= 1) {
-            hSort(arr, h);
+            hsort(arr, h);
             h = h/3;
         }
         return arr;
     }
 
-    private void hSort(int[] arr, int h) {
+    private void hsort(int[] arr, int h) {
         //int length = arr.length;
         for (int i = h; i < arr.length; i++) {
             for (int j = i; j >= h; j = j - h) {
